@@ -1,7 +1,5 @@
 <template>
-  <div>
-    introduce
-  </div>
+  <div id="introduce">introduce</div>
 </template>
 
 <script>

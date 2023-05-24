@@ -4,11 +4,14 @@ $grey : #d3d3d3;
 $sub_grey: #5a5a5a;
 
 header {
+  
   background-color: #fff;
 
   .header_wrap {
+    position: relative;
     display: flex;
     justify-content: space-between;
+    padding: 50px 0 20px;
 
     .date {
       .clock_wrap {
@@ -18,7 +21,11 @@ header {
       }
     }
 
-    .title {}
+    > .title {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
     .onoff {
       position: relative;
@@ -56,8 +63,11 @@ header {
     }
   }
 
+  
+
   .header_cate {
     position: relative;
+    margin-bottom: 4px;
     padding: 15px 0;
     border-top: 1px solid #d3d3d3;
     border-bottom: 1px solid #000;
@@ -75,4 +85,9 @@ header {
       padding: 0 30px;
     }
   }
+}
+
+#introduce {
+  height: 100vh;
+  background-color: #ccc;
 }
