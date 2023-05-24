@@ -22,22 +22,51 @@
 
     <div class="header_cate">
       <ul>
-        <li data-hover2><a href="./main.html">Main</a></li>
-        <li data-hover2><a href="./introduce.html">Introduce</a></li>
-        <li data-hover2><a href="./like.html">Like</a></li>
-        <li data-hover2><a href="./career.html">Career</a></li>
-        <li data-hover2><a href="./portfolio.html">Portfolio</a></li>
-        <li data-hover2><a href="./contact.html">Contact</a></li>
+        <li class="itme" v-for="itme in nav" :key="itme.id">
+          <router-link :to="itme.link">
+            <nav-item :id="itme.id" :title="itme.title"></nav-item>
+          </router-link>
+        </li>
       </ul>
     </div>
   </header>
 </template>
 
 <script>
+import NavItem from '../components/NavItem.vue'
+
 export default {
+  components: {
+    NavItem
+  },
   data () {
     return {
-      status: ''
+      nav: [
+        {
+          link: '/',
+          title: '1'
+        },
+        {
+          link: 'introduce',
+          title: '2'
+        },
+        {
+          link: 'like',
+          title: '3'
+        },
+        {
+          link: 'career',
+          title: '4'
+        },
+        {
+          link: 'portfolio',
+          title: '5'
+        },
+        {
+          link: 'contact',
+          title: '6'
+        }
+      ]
     }
   },
   methods: {
