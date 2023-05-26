@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face { 
+  font-family: Chomsky; 
+  font-style: normal; 
+  font-weight: 700; 
+  src: url(../font/Chomsky.otf) format("truetype")
+}
+
+// 컬러변수
+$point : #d0021b;
+$grey : #d3d3d3;
+$sub_grey: #5a5a5a;
+
+// 폰트변수
+$outfit : 'Outfit', sans-serif;
+$titleFont: 'Chomsky','Outfit', sans-serif;

@@ -10,12 +10,13 @@
       </div>
 
       <div class="title">
-        title
+        the shin's work
       </div>
 
       <div class="onoff" data-hover>
-        <ul>
-          <li></li>
+        <ul @click="setActive">
+          <li :class="{active: isActive }">
+          </li>
         </ul>
       </div>
     </div>
@@ -41,6 +42,7 @@ export default {
   },
   data () {
     return {
+      isActive: false,
       nav: [
         {
           link: '/',
@@ -111,6 +113,10 @@ export default {
       };
       clock()
       setInterval(clock, 1000)
+    },
+    setActive () {
+      this.isActive = !this.isActive
+      console.log(this.isActive)
     }
   },
   mounted () {

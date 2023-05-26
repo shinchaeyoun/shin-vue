@@ -16,6 +16,10 @@ export default {
   components: {
     HeaderView,
     FooterView
+  },
+  setup () {
+    const test = document.getElementsByClassName('onoff')
+    console.log('hi setup', test)
   }
 }
 </script>
