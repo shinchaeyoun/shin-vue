@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap');
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+// 폰트변수
+$outfit : 'Outfit', 'Pretendard-Regular', sans-serif;
+$gowun : 'Gowun Batang', serif;
+$mill : 'Sorts Mill Goudy', serif;
+$pretendard : 'Pretendard-Regular';
+
+// 컬러변수
+$main-color: #e21988;
+$sub-color: #5177ca;

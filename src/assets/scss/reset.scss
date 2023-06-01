@@ -1,0 +1,24 @@
+* {
+  margin: 0; padding: 0;
+}
+
+body.noneScroll {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+::selection {
+  background: red;
+}
+
+ul, li, ol {
+  list-style: none;
+}
+
+a:link, a:active, a:visited {
+  text-decoration: none;
+  color: #222;
+}
+
+span.memo { font-size: 10px; background-color: lemonchiffon; }
