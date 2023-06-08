@@ -1,0 +1,21 @@
+새로고침시에도 변경한 state 값 저장하기
+
+vuex-persistedstate 설치
+
+npm install --save vuex-persistedstate
+npm install vuex-persistedstate
+
+errer => code ERESOLVE
+패키지 의존관계에 의해 충돌 났다는 에러.
+
+npm으로 설치 사이에 "--legacy-peer-deps"을 넣어주니 해결
+npm install --legacy-peer-deps --save vuex-persistedstate
+
+import 코드 추가
+import createPersistedState from 'vuex-persistedstate'
+
+plugins: [
+  createPersistedState({
+    paths: ['noticeStore'] // paths에는 저장할 state 명 넣어주기
+  })
+]
