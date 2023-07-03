@@ -2,23 +2,33 @@
   margin: 0; padding: 0;
 }
 
+body {
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: $outfit;
+  text-transform: capitalize;
+}
+
 body.noneScroll {
   overflow: hidden;
   position: relative;
   height: 100%;
 }
 
-::selection {
-  background: red;
-}
+// ::selection {
+//   background: red;
+// }
 
 ul, li, ol {
   list-style: none;
 }
 
-a:link, a:active, a:visited {
-  text-decoration: none;
-  color: #222;
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #222;
+	text-decoration: none;
 }
 
 span.memo { font-size: 10px; background-color: lemonchiffon; }

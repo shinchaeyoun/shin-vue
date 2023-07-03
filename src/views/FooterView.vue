@@ -78,5 +78,12 @@
 </template>
 
 <script>
-export default {}
+export default {
+  mounted () {
+    this.emitter.on('moveToFooter', () => {
+      const footerTop = document.querySelector('footer').offsetTop
+      window.scrollTo({ top: footerTop, left: 0, behavior: 'smooth' })
+    })
+  }
+}
 </script>

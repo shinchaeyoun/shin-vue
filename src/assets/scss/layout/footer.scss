@@ -1,0 +1,32 @@
+footer {
+  background-color: #f0cb7a;
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 100px 30px;
+    width: 60%; height: 100vh;
+    text-align: center;
+    box-sizing: border-box;
+
+    .tit {
+      margin-bottom: 5px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .left_section, .right_section {
+      > ul > li {
+        margin: 0 0 20px;
+      }
+    }
+
+    .center_section {
+      .logo {
+        margin-bottom: 30px;
+        font-size: 36px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

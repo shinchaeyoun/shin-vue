@@ -1,0 +1,19 @@
+#home {
+  // height: 100vh; // 임시
+
+  .main {
+    width: 100%; height: 100vh;
+    .left {
+      width: 100%; height: 100%;
+      background-color: #dfdbd0;
+    }
+    .right {
+      width: 100%; height: 100%;
+      background-color: #bb9d5f;
+    }
+  }
+
+  #brand_story, #production_process, #event, #store {
+    height: 100vh;
+  }
+}

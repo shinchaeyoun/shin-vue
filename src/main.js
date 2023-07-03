@@ -2,8 +2,12 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './assets/scss/variables.scss'
-import './assets/scss/reset.scss'
+import mitt from 'mitt'
+
 import './assets/scss/_index.scss'
 
-createApp(App).use(store).use(router).mount('#app')
+const emitter = mitt()
+const app = createApp(App)
+
+app.config.globalProperties.emitter = emitter
+app.use(store).use(router).mount('#app')

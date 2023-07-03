@@ -1,0 +1,144 @@
+header {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  text-align: center;
+  z-index: 9999;
+
+  .logo {
+    position: fixed;
+    top: 30px; left: 50%;
+    transform: translateX(-50%);
+
+    a {
+      font-size: 30px;
+    }
+  }
+
+  nav {
+    top: 0;
+
+    .gnb,
+    .right_nav {
+      position: fixed;
+      top: 30px;
+    }
+
+    .gnb.left_nav {
+      left: 30px;
+      text-align: left;
+
+      li.active a,
+      div.active a {
+        color: $main-color;
+      }
+
+      li {
+        div {
+          font-size: 18px;
+          line-height: 1.5;
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .right_nav {
+      right: 30px;
+      text-align: right;
+
+      .menu {
+        margin-bottom: 20px;
+        overflow: hidden;
+
+        >ul>li {
+          // height: 30px;
+          overflow: hidden;
+
+          // &.active {
+          //   height: 100%;
+          // }
+
+          >a {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5;
+          }
+        }
+
+        .sub_menu {
+          height:100%;
+          overflow: hidden;
+
+          li {
+            height: 23px;
+            line-height: 1.6;
+          }
+
+          &.active {
+            height: 100px;
+          }
+
+          .hover-underline {
+            display: inline-block;
+            position: relative;
+            color: #222;
+          }
+          
+          .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 3px;
+            left: 0;
+            background-color: #222;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+          }
+          
+          .hover-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+
+        .fade-enter { // 생길 때
+          > li a { color: green; }
+          border: 1px solid #000;
+        }
+        .fade-enter-active{  // 생기는 중
+          > li a { color: blue; }
+          height: 100%;
+          transition: all .3s ease;
+        }
+        .fade-leave-active { // 사라지는 중
+          > li a { color: red; }
+          height: 0%;
+          transition: all .3s;
+          // transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .fade-enter-to {
+          color: yellow;
+        }
+        .fade-enter, .fade-leave-to { // 사라질 때
+          transform: translateY(-10px);
+          height: 0%;
+          opacity: 0;
+        }
+      }
+    }
+
+    .customer {
+      margin-top: 20px;
+
+      li {
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
