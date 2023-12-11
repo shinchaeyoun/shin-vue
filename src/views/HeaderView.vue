@@ -15,7 +15,7 @@
 
       <div class="onoff" data-hover>
         <ul @click="setActive">
-          <li :class="{active: isActive }">
+          <li :class="{ active: isActive }">
           </li>
         </ul>
       </div>
@@ -41,7 +41,14 @@ export default {
     NavItem
   },
   data () {
+    console.log('')
+    console.log('[MainComponent] : [data] : [start]')
+    console.log('설 명 : 데이터 초기화 준비')
+    console.log('sum : ' + this.$getSum(10, 20))
+    console.log('')
+
     return {
+      data: 'MAIN', // [데이터 정의]
       isActive: false,
       nav: [
         {
