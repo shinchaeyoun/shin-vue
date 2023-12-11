@@ -8,11 +8,15 @@
 
     <nav>
       <ul class="gnb left_nav" ref="menu" @click="onAClick">
-        <li><div id="brand_story">left_memu1</div></li>
-        <li><div id="production_process">left_memu2</div></li>
-        <li><div id="event">left_memu3</div></li>
-        <li><div id="store">left_memu4</div></li>
-        <li><div id="footer" @click="moveToFooter">left_memu5<span class="memo">footer</span></div></li>
+        <!-- <li @click="moveToMenu"><div id="brand_story">left_memu1</div></li>
+        <li @click="moveToMenu"><div id="production_process">left_memu2</div></li>
+        <li @click="moveToMenu"><div id="event">left_memu3</div></li>
+        <li @click="moveToMenu"><div id="store">left_memu4</div></li> -->
+        <li v-for="menu in this.$store.state.mainMenu" :key="menu" @click="moveToMenu">
+          <div :id="menu.name">{{ menu.name }}</div>
+        </li>
+
+        <li><div id="footer" @click="moveToFooter">footer<span class="memo">footer</span></div></li>
         <div @click="moveToSupport">
           <a>
             support
@@ -182,11 +186,45 @@ export default {
 
     },
     onAClick (e) {
+      // const array = window.location.href.split('/')
+      // const arrayLength = array.filter(Boolean).length
+
+      // const sections = document.querySelectorAll('.gnb > li > div')
+      // let thisSection
+      // const sectionArr = []
+
+      // for (let i = 0; i < sections.length; i++) {
+      //   sectionArr.push(sections[i])
+      //   if (sections[i].id === e.target.id) {
+      //     thisSection = sections[i].id
+      //   }
+      // }
+
       if (e.target.nodeName === 'DIV' && e.target.id !== 'footer') {
-        this.$router.push({ path: '/' })
-        this.emitter.emit('moveToSection', e.target.id)
-        console.log('if')
+        // console.log('on an click if')
+      //   this.$router.push({ path: '/' })
+      //   // this.emitter.emit('moveToSection', [thisSection, sectionArr, arrayLength])
+      //   // this.emitter.emit('moveToSection')
       }
+    },
+    moveToMenu (e) {
+      // const array = window.location.href.split('/')
+      // const arrayLength = array.filter(Boolean).length
+
+      // const sections = document.querySelectorAll('.gnb > li > div')
+      // let thisSection
+      // const sectionArr = []
+
+      // for (let i = 0; i < sections.length; i++) {
+      //   sectionArr.push(sections[i])
+      //   if (sections[i].id === e.target.id) {
+      //     thisSection = sections[i].id
+      //   }
+      // }
+
+      this.$router.push({ path: '/' })
+      // this.emitter.emit('moveToSection', [thisSection, sectionArr])
+      this.emitter.emit('moveToSection')
     },
     moveToTop () {
       this.$router.push({ path: '/' })

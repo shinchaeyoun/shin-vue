@@ -5,42 +5,86 @@
       <div class="right">right</div>
     </div>
 
-    <section id="brand_story" class="describe" ref="brandStory">
-      Stavanger Ysteri ble etablert av Lise Brunborg i 2015, og ysteriet har sine røtter i tradisjonell håndverksysting. Produksjonen foregår i sentrum av Stavanger. Ysteriet er et utstillingsvindu for et nytt og bærekraftig norsk landbruk.
-    </section>
-
-    <section id="production_process">
-      Stavanger Ysteri ligger i en gammel emballasjefabrikk i Stavanger Øst. Denne bydelen var en gang selve hjertet i den lokale fiske- og hermetikkindustrien, og de siste årene har flere matprodusenter og restauranter funnet tilbake til tomme og fraflyttede fabrikker. Bydelen har blitt vekket til live igjen.
-
-      Lises interesse for ost startet med en fascinasjon for melkas potensiale for forvandling — hvordan denne søte, milde væsken, som inneholder 86% vann, kan omskapes til ost med et utall forskjellige smaker og lukter, konsistenser og egenskaper. Med bare litt variasjon i kultur, osteløpe, salting og modning skapes et ubegrenset smaksmangfold. Lise bestemte seg for å la fascinasjonen bli et livsprosjekt. Hun tok en mastergrad i ostevitenskap før hun grunnla Stavanger Ysteri.
-    </section>
-
-    <section id="event">
-      Stavanger Ysteri ligger i en gammel emballasjefabrikk i Stavanger Øst. Denne bydelen var en gang selve hjertet i den lokale fiske- og hermetikkindustrien, og de siste årene har flere matprodusenter og restauranter funnet tilbake til tomme og fraflyttede fabrikker. Bydelen har blitt vekket til live igjen.
-    </section>
-
-    <section id="store">
-      Lises interesse for ost startet med en fascinasjon for melkas potensiale for forvandling — hvordan denne søte, milde væsken, som inneholder 86% vann, kan omskapes til ost med et utall forskjellige smaker og lukter, konsistenser og egenskaper. Med bare litt variasjon i kultur, osteløpe, salting og modning skapes et ubegrenset smaksmangfold. Lise bestemte seg for å la fascinasjonen bli et livsprosjekt. Hun tok en mastergrad i ostevitenskap før hun grunnla Stavanger Ysteri.
-    </section>
+    <section v-for="item in this.$store.state.mainMenu" :key="item" :id="item.name">{{ item.describe }}</section>
   </div>
   </template>
 
 <script>
 export default {
+  data () {
+    return {
+      isMounted: false
+    }
+  },
   mounted () {
-    this.emitter.on('moveToSection', (data) => {
-      const menu = data
-      const sections = document.querySelectorAll('section')
-      console.log(menu)
-      for (let i = 0; i < sections.length; i++) {
-        const section = sections[i]
+    this.isMounted = true
+    console.log('mounted', this.$store.state.mainMenu.length)
 
-        if (section.id === menu) {
-          const moveToTop = section.offsetTop
-          window.scrollTo(0, moveToTop)
-        }
-      }
+    // if (this.isMounted === true) {
+    //   this.moveToMenu()
+    // }
+    this.emitter.on('moveToSection', (item) => {
+      console.log('moveToSection')
+      // console.log('home-movetosection')
+      // console.log('item', item)
+      // const thisItem = item[0]
+      const sections = document.querySelectorAll('section')
+
+      console.log('sections', sections)
+    // for (let i = 0; i < sections.length; i++) {
+    //   if (sections[i].id === thisItem) {
+    //     const sectionTop = sections[i].offsetTop
+    //     console.log('sectionTop', sectionTop)
+    //     window.scrollTo({ top: sectionTop, left: 0, behavior: 'smooth' })
+    //   }
+    // }
     })
+  },
+  methods: {
+    // setToMove (item) {
+    //   console.log('set to move', item)
+    //   // const thisItem = item[0]
+    //   // const sections = document.querySelectorAll('section')
+
+    //   // for (let i = 0; i < sections.length; i++) {
+    //   //   if (sections[i].id === thisItem) {
+    //   //     const sectionTop = sections[i].offsetTop
+    //   //     console.log('sectionTop', sectionTop)
+    //   //     window.scrollTo({ top: sectionTop, left: 0, behavior: 'smooth' })
+    //   //   }
+    //   // }
+    // },
+    // moveToMenu (item) {
+    //   // console.log('Move to menu methods')
+    //   // this.setToMove(item)
+    //   this.emitter.on('moveToSection', (item) => {
+    //     // console.log('move to section function move to menu')
+    //     this.setToMove(item)
+    //     // const thisItem = item[0]
+    //     // const sections = document.querySelectorAll('section')
+
+    //   // for (let i = 0; i < sections.length; i++) {
+    //   //   if (sections[i].id === thisItem) {
+    //   //     const sectionTop = sections[i].offsetTop
+    //   //     console.log('sectionTop', sectionTop)
+    //   //     window.scrollTo({ top: sectionTop, left: 0, behavior: 'smooth' })
+    //   //   }
+    //   // }
+    //   })
+    //   // console.log('move to menu', document.querySelectorAll('section'))
+    //   // console.log('move fn item', item)
+
+    //   // const thisItem = item[0]
+    //   // const sections = document.querySelectorAll('section')
+
+    //   // for (let i = 0; i < sections.length; i++) {
+    //   //   if (sections[i].id === thisItem) {
+    //   //     const sectionTop = sections[i].offsetTop
+    //   //     console.log('sectionTop', sectionTop)
+    //   //     window.scrollTo({ top: sectionTop, left: 0, behavior: 'smooth' })
+    //   //   }
+    //   // }
+    // }
   }
 }
 </script>
